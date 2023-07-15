@@ -56,16 +56,18 @@ contract ErrorHandlingExample {
 
 ## Explaination of Each portion of Code
 
-**pragma solidity ^0.8.0;**
+**This line indicates that, this code is compatible with 0.8.0 Version of Solodity or more advanced version.**
 
-This line indicates that, this code is compatible with 0.8.0 Version of Solodity or more advanced version.
+pragma solidity ^0.8.0;
 
 
-**contract ErrorHandlingExample {
-    uint public totalValue;**
+**Contract name is ErrorhandlingExample in which unsigned integer (uint) titalValue is used which is public variable
+Public variable is accesseble for inside and outside the world**
 
- Contravt name is ErrorhandlingExample in which unsigned integer (uint) titalValue is used which is public variable
-Public variable is accesseble for inside and outside the world
+contract ErrorHandlingExample {
+    uint public totalValue;
+
+ 
 
 
 **function deposit(uint _value) public {
