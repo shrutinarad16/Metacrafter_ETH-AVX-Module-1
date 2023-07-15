@@ -4,13 +4,31 @@
 This is Third Module of Metacrafter Course
 We learnt Error Handling in Etherium.
 
+
+## Knowledge of different keywords used in error handling
+### require
+This is one type of error handling
+It has condition which must be satisfies for successfull execution of transaction
+In case, this condition fails; it will displays a error message
+
+### revert
+This is another type of error handling
+Any condition fails, it revert a default error message
+
+### assert
+This is third type of error handling
+In this type, we uses asuumptions
+If assumption is true then execution of next code line of program occurs
+In case, our assumption is false, so it will not execute the next line and displays a running ststus of code which clearl states that there is error occured
+In this way we encounter the errors.
+
+### pure
+pure: You can not read or modify the contract
 # Code
 ### To run this code, you have to use ONLINE REMIX IDE Platform
 
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.0;
-
 contract ErrorHandlingExample {
     uint public totalValue;
 
@@ -115,6 +133,53 @@ In case, condition fails then it reverts an error message.
         uint result = _numerator / _denominator;
         return result;
     }
+
+Function name: divide which takes input as numerator and denominator as undigned integers. This is public varible but in pure format
+pure: You can not read or modify the contract
+It has require condtion which states that denominator can not be zero; in case it becomes zero; it will revert as error message.
+If this condtion satisfies then result will display as divison.
+
+### code
+    function assertExample(uint _value) public pure returns (bool) {
+        assert(_value > 0);
+
+        // The following line will never be reached if the assertion fails
+        return true;
+    }
+
+function name: assertExample which uses assert type of error handling.
+assert is assumption where we take a input as integer if this integer > 0 then it will display boolean value "True"
+otherwise, it will not pass the value to further line of code and will display as running status of code
+This clearly indicates that, there is error in entered value.
+
+
+### code
+    function revertExample() public pure {
+        revert("This is a revert example");
+    }
+
+This is just an example of revert keyword where transactions will provode error message as _This is a revert example_
+
+
+### code
+    function assertWithMessage() public pure {
+        uint a = 10;
+        uint b = 5;
+
+        assert(a > b);
+        revert("This is an assert example with a revert statement");
+    }
+}
+
+In this function, we used assert + revert keywords
+In this function,
+ a > b ; will give proper transaction as we used assert.
+ In case our assumption fails then it will revert a error messsage: "This is an assert example with a revert statement"
+
+
+ ## Author
+ **Shruti Narad**
+ https://www.linkedin.com/in/shruti-narad-108b08230
 
 
 
