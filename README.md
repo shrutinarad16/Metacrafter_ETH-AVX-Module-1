@@ -2,7 +2,7 @@
 ## Explaination of Errorhandling_ETH+AVX Code
 ### Project Short Summary
 This is Third Module of Metacrafter Course
-We learnt Error Handling in Etherium.
+We learned Error Handling in Etherium.
 
 
 ## Knowledge of different keywords used in error handling
