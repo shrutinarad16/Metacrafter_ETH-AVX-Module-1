@@ -74,12 +74,12 @@ Public variable is accesseble for inside and outside the world
 
 
 ### code
-  function deposit(uint _value) public {
-  require(_value > 0, "Value must be greater than zero"); 
- totalValue += _value;
- }
+##### function deposit(uint _value) public {
+###### require(_value > 0, "Value must be greater than zero"); 
+###### totalValue += _value;
+###### }
 
-Function name: deposite which takes the entry of unsigned integer value and this 
+Function name: deposit which takes the entry of unsigned integer value and this 
 is also public variable
 here, require keyword is used for **errorhandling**.
 Require keyword has condition;
@@ -87,13 +87,31 @@ Require keyword has condition;
        In case condituon fails then it will **revert** a error message.
 
 
-  
-  **function withdraw(uint _value) public {
-        require(_value > 0, "Value must be greater than zero");
-        require(_value <= totalValue, "Insufficient balance");
+  ### code
+##### function withdraw(uint _value) public {
+##### require(_value > 0, "Value must be greater than zero");
+###### require(_value <= totalValue, "Insufficient balance");
+###### totalValue -= _value;
+##### }
 
-        totalValue -= _value;
-    }**
+This withdraw function is same as deposit function but works in opposite manner.
+Withdraw takes input as unsigned integer and represent is as public variable
+It has two require keywords which demonstrate two different conditions
+1) Value must be greater than zero
+2) value should be less than or equal to totalValue
+Here value is entered amount
+If both the coditions get satisfied then amount (value) will be deducted from totalValue.
+In case, condition fails then it reverts an error message.
+
+
+### code
+    function divide(uint _numerator, uint _denominator) public pure returns (uint) {
+        require(_denominator > 0, "Cannot divide by zero");
+
+        uint result = _numerator / _denominator;
+        return result;
+    }
+
 
 
 
