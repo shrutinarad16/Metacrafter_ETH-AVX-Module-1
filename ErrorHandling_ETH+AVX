@@ -1,0 +1,46 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+contract ErrorHandlingExample {
+    uint public totalValue;
+
+    function deposit(uint _value) public {
+        require(_value > 0, "Value must be greater than zero");
+        totalValue += _value;
+
+    }
+
+    function withdraw(uint _value) public {
+        require(_value > 0, "Value must be greater than zero");
+        require(_value <= totalValue, "Insufficient balance");
+
+        totalValue -= _value;
+    }
+
+    function divide(uint _numerator, uint _denominator) public pure returns (uint) {
+        require(_denominator > 0, "Cannot divide by zero");
+
+        uint result = _numerator / _denominator;
+        return result;
+    }
+
+    function assertExample(uint _value) public pure returns (bool) {
+        assert(_value > 0);
+
+        // The following line will never be reached if the assertion fails
+        return true;
+    }
+
+    function revertExample() public pure {
+        revert("This is a revert example");
+    }
+
+    function assertWithMessage() public pure {
+        uint a = 10;
+        uint b = 5;
+
+        assert(a > b);
+        revert("This is an assert example with a revert statement");
+    }
+}
