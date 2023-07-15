@@ -65,7 +65,7 @@ This line indicates that, this code is compatible with 0.8.0 Version of Solodity
 
 ### code                                                                           
 ##### contract ErrorHandlingExample {
-#### uint public totalValue;
+##### uint public totalValue;
 
 Contract name is ErrorhandlingExample in which unsigned integer (uint) titalValue 
 is used which is public variable
@@ -73,15 +73,16 @@ is used which is public variable
 Public variable is accesseble for inside and outside the world
 
 
-code
-function deposit(uint _value) public {
-require(_value > 0, "Value must be greater than zero"); 
-totalValue += _value;
-}
+### code
+  function deposit(uint _value) public {
+  require(_value > 0, "Value must be greater than zero"); 
+ totalValue += _value;
+ }
 
-    Function name: deposite which takes the entry of unsigned integer value and this is also public variable
-    here, require keyword is used for **errorhandling**.
-    Require keyword has condition;
+Function name: deposite which takes the entry of unsigned integer value and this 
+is also public variable
+here, require keyword is used for **errorhandling**.
+Require keyword has condition;
        if the condition under require keyword get satisfied then it wil add particular entered amount in totalValue.
        In case condituon fails then it will **revert** a error message.
 
