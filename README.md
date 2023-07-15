@@ -58,14 +58,15 @@ contract ErrorHandlingExample {
 
 
 ### Code 
-#### pragma solidity ^0.8.0;
+ pragma solidity ^0.8.0;
+
 
 This line indicates that, this code is compatible with 0.8.0 Version of Solodity or more advanced version.
 
 
 ### code                                                                           
-##### contract ErrorHandlingExample {
-##### uint public totalValue;
+contract ErrorHandlingExample {
+    uint public totalValue;
 
 Contract name is ErrorhandlingExample in which unsigned integer (uint) titalValue 
 is used which is public variable
@@ -74,10 +75,11 @@ Public variable is accesseble for inside and outside the world
 
 
 ### code
-##### function deposit(uint _value) public {
-###### require(_value > 0, "Value must be greater than zero"); 
-###### totalValue += _value;
-###### }
+    function deposit(uint _value) public {
+        require(_value > 0, "Value must be greater than zero");
+        totalValue += _value;
+    }
+
 
 Function name: deposit which takes the entry of unsigned integer value and this 
 is also public variable
@@ -88,11 +90,13 @@ Require keyword has condition;
 
 
   ### code
-##### function withdraw(uint _value) public {
-##### require(_value > 0, "Value must be greater than zero");
-###### require(_value <= totalValue, "Insufficient balance");
-###### totalValue -= _value;
-##### }
+    function withdraw(uint _value) public {
+        require(_value > 0, "Value must be greater than zero");
+        require(_value <= totalValue, "Insufficient balance");
+
+        totalValue -= _value;
+    }
+
 
 This withdraw function is same as deposit function but works in opposite manner.
 Withdraw takes input as unsigned integer and represent is as public variable
